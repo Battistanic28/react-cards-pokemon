@@ -11,15 +11,16 @@ import "./PokeDex.css";
  * or from a dropdown of available pokemon. */
 function PokeDex() {
 
-  // const [pokemon, addPokemon] = useAxios(`https://pokeapi.co/api/v2/${name}/pikachu/`);
+  /* Select element to choose from common pokemon. */
 
-  const [pokemon, setPokemon] = useState([]);
-  const addPokemon = async name => {
-    const response = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${name}/`
-    );
-    setPokemon(pokemon => [...pokemon, { ...response.data, id: uuid() }]);
-  };
+  const [pokemon, addPokemon] = useAxios(`https://pokeapi.co/api/v2/pokemon/`);
+  // const [pokemon, setPokemon] = useState([]);
+  // const addPokemon = async name => {
+  //   const response = await axios.get(
+  //     `https://pokeapi.co/api/v2/pokemon/${name}/`
+  //   );
+  //   setPokemon(pokemon => [...pokemon, { ...response.data, id: uuid() }]);
+  // };
   return (
     <div className="PokeDex">
       <div className="PokeDex-buttons">
